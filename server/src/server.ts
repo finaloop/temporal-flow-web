@@ -6,7 +6,7 @@ const PORT = 7531; // Uncommon port number
 
 const whitelistedOrigins = [
   "http://localhost:5173",
-  "https://itaisoudry.github.io",
+  "https://finaloop.github.io",
 ];
 
 const app = express();
