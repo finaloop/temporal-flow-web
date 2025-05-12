@@ -37,7 +37,7 @@ function addButtonsToWorkflows() {
 
     button.addEventListener("click", (e) => {
       e.stopPropagation();
-      const url = `https://itaisoudry.github.io/temporal-flow-web/?id=${encodeURIComponent(
+      const url = `https://finaloop.github.io/temporal-flow-web/?id=${encodeURIComponent(
         workflowId
       )}&namespace=${encodeURIComponent(namespace)}&runID=${encodeURIComponent(
         runId
