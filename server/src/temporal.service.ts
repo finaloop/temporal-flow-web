@@ -50,7 +50,7 @@ export default class TemporalService {
   }
 
   async getWorkflowData(namespace: string, workflowId: string, runId: string) {
-    const url = `${this.endpoint}/api/v1/namespaces/${namespace}/workflows/${workflowId}?execution.runId=${runId}`;
+    const url = `${this.endpoint}/api/v1/namespaces/${namespace}/workflows/${encodeURIComponent(workflowId)}?execution.runId=${runId}`;
     const response = await fetch(url, { headers: this.headers });
     if (!response.ok) {
       throw new InternalServerError(
@@ -71,7 +71,7 @@ export default class TemporalService {
     do {
       const url = `${
         this.endpoint
-      }/api/v1/namespaces/${namespace}/workflows/${workflowId}/history?execution.runId=${runId}&next_page_token=${encodeURIComponent(
+      }/api/v1/namespaces/${namespace}/workflows/${encodeURIComponent(workflowId)}/history?execution.runId=${runId}&next_page_token=${encodeURIComponent(
         nextPageToken
       )}`;
       const response = await fetch(url, { headers: this.headers });
